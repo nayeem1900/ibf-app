@@ -39,15 +39,16 @@
 </div>
 
 <nav class="navbar fixed-top px-0 shadow-sm bg-white">
+    
     <div class="container-fluid">
 
         <a class="navbar-brand" href="#">
             <span class="icon-nav m-0 h5" onclick="MenuBarClickHandler()">
                 <img class="nav-logo-sm mx-2"  src="{{asset('images/menu.svg')}}" alt="logo"/>
             </span>
-            <img class="nav-logo  mx-2"  src="{{asset('images/logo.png')}}" alt="logo"/>
+            <!-- <img class="nav-logo  mx-2"  src="{{asset('images/logo.png')}}" alt="logo"/> -->
         </a>
-
+<h1>Islami Bank Foundation</h1>
         <div class="float-right h-auto d-flex">
             <div class="user-dropdown">
                 <img class="icon-nav-img" src="{{asset('images/user.webp')}}" alt=""/>
@@ -86,14 +87,11 @@
         <i class="bi bi-list-nested"></i>
         <span class="side-bar-item-caption">Category</span>
     </a>
-    <a href="{{url("/categoryPage")}}" class="side-bar-item">
-        <i class="bi bi-list-nested"></i>
-        <span class="side-bar-item-caption">Service Category</span>
-    </a>
+   
 
-    <a href="{{url("/productPage")}}" class="side-bar-item">
+    <a href="{{url("/etenderPage")}}" class="side-bar-item">
         <i class="bi bi-bag"></i>
-        <span class="side-bar-item-caption">Product</span>
+        <span class="side-bar-item-caption">Etender</span>
     </a>
 
     <a href="{{url('/salePage')}}" class="side-bar-item">

@@ -2,8 +2,10 @@
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\HomeController;
 use App\Http\Middleware\TokenVerificationMiddleware;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EtenderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +21,13 @@ use App\Http\Controllers\DashboardController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+
+
+//frontend
+
+Route::get('/',[HomeController::class,'home'])->name('home');
+Route::get('/etender',[HomeController::class,'etender']);
+
 
 // Web API Routes
 Route::post('/user-registration',[UserController::class,'UserRegistration']);
@@ -45,6 +54,7 @@ Route::get('/userProfile',[UserController::class,'ProfilePage'])->middleware([To
 Route::get('/categoryPage',[CategoryController::class,'CategoryPage'])->middleware([TokenVerificationMiddleware::class]);
 Route::get('/customerPage',[CustomerController::class,'CustomerPage'])->middleware([TokenVerificationMiddleware::class]);
 Route::get('/productPage',[ProductController::class,'ProductPage'])->middleware([TokenVerificationMiddleware::class]);
+Route::get('/etenderPage',[EtenderController::class,'EtenderPage'])->middleware([TokenVerificationMiddleware::class]);
 Route::get('/invoicePage',[InvoiceController::class,'InvoicePage'])->middleware([TokenVerificationMiddleware::class]);
 Route::get('/salePage',[InvoiceController::class,'SalePage'])->middleware([TokenVerificationMiddleware::class]);
 Route::get('/reportPage',[ReportController::class,'ReportPage'])->middleware([TokenVerificationMiddleware::class]);
@@ -56,3 +66,10 @@ Route::get("/list-category",[CategoryController::class,'CategoryList'])->middlew
 Route::post("/delete-category",[CategoryController::class,'CategoryDelete'])->middleware([TokenVerificationMiddleware::class]);
 Route::post("/update-category",[CategoryController::class,'CategoryUpdate'])->middleware([TokenVerificationMiddleware::class]);
 Route::post("/category-by-id",[CategoryController::class,'CategoryByID'])->middleware([TokenVerificationMiddleware::class]);
+
+// Etender API
+Route::post("/create-etender",[EtenderController::class,'CreateEtender'])->middleware([TokenVerificationMiddleware::class]);
+Route::post("/delete-etender",[EtenderController::class,'DeleteEtender'])->middleware([TokenVerificationMiddleware::class]);
+Route::post("/update-etender",[EtenderController::class,'UpdateEtender'])->middleware([TokenVerificationMiddleware::class]);
+Route::get("/list-etender",[EtenderController::class,'EtenderList'])->middleware([TokenVerificationMiddleware::class]);
+Route::post("/etender-by-id",[EtenderController::class,'EtenderByID'])->middleware([TokenVerificationMiddleware::class]);
