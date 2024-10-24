@@ -47,7 +47,7 @@
       <td>{{($etender->sdate)}}</td>
       <td>{{($etender->edate)}}</td>
       <td>
-      <a href="uploads/{{($etender->img_url)}}" download="{{($etender->img_url)}}">
+      <a href="{{($etender->img_url)}}" download="{{($etender->img_url)}}">
                             <button type="button" class="btn btn-primary">
                                 <i class="glyphicon glyphicon-download">
                                 </i>Download</button>
