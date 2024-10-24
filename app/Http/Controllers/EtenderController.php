@@ -35,8 +35,8 @@ class EtenderController extends Controller
         // Save To Database
         return Etender::create([
             'name'=>$request->input('name'),
-            'sdate'=>$request->input('sdate'),
-            'edate'=>$request->input('edate'),
+             'sdate'=>$request->input('sdate'),
+             'edate'=>$request->input('edate'),
             'img_url'=>$img_url,          
             'user_id'=>$user_id
         ]);
@@ -48,7 +48,7 @@ class EtenderController extends Controller
         $etender_id=$request->input('id');
         $filePath=$request->input('file_path');
         File::delete($filePath);
-        return Etender::where('id',$product_id)->where('user_id',$user_id)->delete();
+        return Etender::where('id',$etender_id)->where('user_id',$user_id)->delete();
 
     }
 
@@ -104,13 +104,15 @@ class EtenderController extends Controller
         else {
             return Etender::where('id',$etender_id)->where('user_id',$user_id)->update([
                 'name'=>$request->input('name'),
-                'price'=>$request->input('price'),
-                'unit'=>$request->input('unit'),
+                'sdate'=>$request->input('sdate'),
+                'edate'=>$request->input('edate'),
                 
             ]);
         }
     }
 
+
+// Frontend
 
 
 

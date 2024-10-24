@@ -61,8 +61,8 @@
 
         
         let etenderName = document.getElementById('etenderName').value;
-        let sdate = document.getElementById('sDate').value;
-        let edate = document.getElementById('eDate').value;
+        let sDate = document.getElementById('sDate').value;
+        let eDate = document.getElementById('eDate').value;
         let etenderImg = document.getElementById('etenderImg').files[0];
 
         if (etenderName.length === 0) {
@@ -74,20 +74,21 @@
         else if(eDate.length===0){
             errorToast("End Date Required !")
         }
-        
+
         else if(!etenderImg){
             errorToast("Etender Image Required !")
         }
 
         else {
 
+
             document.getElementById('modal-close').click();
 
             let formData=new FormData();
             formData.append('img',etenderImg)
             formData.append('name',etenderName)
-            formData.append('sdate',sDate)
-            formData.append('edate',eDate)
+             formData.append('sdate',sDate)
+             formData.append('edate',eDate)
             
 
             const config = {
